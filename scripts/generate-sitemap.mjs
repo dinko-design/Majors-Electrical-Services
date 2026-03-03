@@ -65,11 +65,22 @@ const paths = [
 
 const urls = paths.map((p) => `${BASE_URL}${p || '/'}`);
 
+/** Escape XML special chars in URL/content so parsers don't break (e.g. & in outlet-&-switch). */
+function escapeXml(unsafe) {
+  if (!unsafe) return '';
+  return String(unsafe)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 const lastmod = new Date().toISOString().slice(0, 10);
 const urlEntries = urls
   .map(
     (loc) => `  <url>
-    <loc>${loc}</loc>
+    <loc>${escapeXml(loc)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${loc === BASE_URL + '/' ? '1.0' : '0.8'}</priority>
