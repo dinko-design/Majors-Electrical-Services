@@ -9,9 +9,11 @@ function NavigationMenu({
   className,
   children,
   viewport = true,
+  viewportAlign = "left",
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
   viewport?: boolean;
+  viewportAlign?: "left" | "right" | "center";
 }) {
   return (
     <NavigationMenuPrimitive.Root
@@ -24,7 +26,7 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      {viewport && <NavigationMenuViewport />}
+      {viewport && <NavigationMenuViewport align={viewportAlign} />}
     </NavigationMenuPrimitive.Root>
   );
 }
@@ -101,12 +103,18 @@ function NavigationMenuContent({
 
 function NavigationMenuViewport({
   className,
+  align = "left",
   ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {
+}: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport> & {
+  align?: "left" | "right" | "center";
+}) {
   return (
     <div
       className={cn(
-        "absolute top-full left-0 isolate z-50 flex justify-center",
+        "absolute top-full isolate z-50 flex justify-center",
+        align === "left" && "left-0",
+        align === "right" && "right-0",
+        align === "center" && "left-1/2 -translate-x-1/2",
       )}
     >
       <NavigationMenuPrimitive.Viewport

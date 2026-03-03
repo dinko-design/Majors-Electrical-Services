@@ -1,21 +1,17 @@
 import { motion } from 'motion/react';
-import { Shield, Lock, FileText } from 'lucide-react';
+import { Shield } from 'lucide-react';
+import { PageHero } from '@/app/components/layout/PageHero';
 
 export function Privacy() {
   return (
     <div className="w-full">
-      <section className="bg-muted/30 py-16 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
-            <Shield className="h-4 w-4 mr-2" />
-            Your Data is Secure
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Privacy Policy</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We value your trust and are committed to protecting your personal information.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Privacy Policy"
+        subtitle="We value your trust and are committed to protecting your personal information."
+        badge={{ icon: Shield, text: 'Your Data is Secure' }}
+        variant="dark"
+        compact
+      />
 
       <section className="py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

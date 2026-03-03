@@ -1,16 +1,17 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { PageHero } from '@/app/components/layout/PageHero';
+import { CTASection } from '@/app/components/layout/CTASection';
 
 export function Contact() {
   return (
     <div className="w-full">
-      <section className="bg-muted/30 py-16 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Contact Us</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your project? Get in touch with our team for a free quote or consultation.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Contact Us"
+        subtitle="Ready to start your project? Get in touch with our team for a free quote or consultation."
+        badge={{ icon: Phone, text: 'Get in Touch' }}
+        variant="dark"
+        compact
+      />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

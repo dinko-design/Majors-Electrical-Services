@@ -14,20 +14,20 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import { PageHero } from '@/app/components/layout/PageHero';
+import { CTASection } from '@/app/components/layout/CTASection';
 import { locations } from '@/app/data/locations';
-import ourStoryImage from 'asset/49cb41d3d279b42c8e61df9adb727cdcb233c3d0.png';
-import founderImage from 'asset/f45c62813a9a5d7b086aebd23e7f247db10a3921.png';
-import teamVideoCover from 'asset/2a31a77a7d8f0440e8c0d2632beb026bc5977045.png';
-
-// Imports to match Homepage
-import careersImage from 'asset/e0d30f32cd7dc3920f11289a6cc003395c2642b3.png';
-import mikeImage from 'asset/72ba1c2260228eba1852b49cff83f5b869d6a035.png';
-import customerInteractionImage from 'asset/dc09f862e9fb2c9320b863e2a257807480d402e8.png';
-import panelTechImage from 'asset/6db98eed149d3991fa29d8cd2a1cb28648559a31.png';
-import teamBackImage from 'asset/fa192ccea6990bf21a815f365a6a71e2fe041d4a.png';
-import residentialServiceImage from 'asset/39117b4a0ee024f3f2917d6f1da2a484045a3880.png';
-import heroImage from 'asset/24aa3548a5c2e32e0211db0e2b82c11ea67462b6.png';
-import vansImage from 'asset/ebbdfb70b36c3d41cc238fa41db1e5da94fd237d.png';
+import ourStoryImage from 'asset/49cb41d3d279b42c8e61df9adb727cdcb233c3d0.png?w=1200&format=webp';
+import founderImage from 'asset/f45c62813a9a5d7b086aebd23e7f247db10a3921.png?w=800&format=webp';
+import teamVideoCover from 'asset/2a31a77a7d8f0440e8c0d2632beb026bc5977045.png?w=1200&format=webp';
+import careersImage from 'asset/e0d30f32cd7dc3920f11289a6cc003395c2642b3.png?w=800&format=webp';
+import mikeImage from 'asset/72ba1c2260228eba1852b49cff83f5b869d6a035.png?w=600&format=webp';
+import customerInteractionImage from 'asset/dc09f862e9fb2c9320b863e2a257807480d402e8.png?w=600&format=webp';
+import panelTechImage from 'asset/6db98eed149d3991fa29d8cd2a1cb28648559a31.png?w=600&format=webp';
+import teamBackImage from 'asset/fa192ccea6990bf21a815f365a6a71e2fe041d4a.png?w=600&format=webp';
+import residentialServiceImage from 'asset/39117b4a0ee024f3f2917d6f1da2a484045a3880.png?w=800&format=webp';
+import heroImage from 'asset/24aa3548a5c2e32e0211db0e2b82c11ea67462b6.png?w=1200&format=webp';
+import vansImage from 'asset/ebbdfb70b36c3d41cc238fa41db1e5da94fd237d.png?w=1200&format=webp';
 
 export function About() {
   const fadeInUp = {
@@ -96,29 +96,12 @@ export function About() {
 
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
-        {/* Abstract Background */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary mb-6">
-              Since 2015
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight">
-              Powering the Community We Call Home.
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Majors Electrical Services is more than just a contractor. We are your neighbors, committed to safety, integrity, and building lasting relationships through quality craftsmanship.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Story"
+        subtitle="Family-owned since October 2015, Majors Electrical Services was built on a simple promise — to provide Sarasota families and businesses with electrical work they can trust."
+        badge={{ icon: Shield, text: 'About Majors Electrical' }}
+        variant="gradient"
+      />
 
       {/* Video / Intro Section */}
       <section className="py-12 bg-background">
@@ -318,7 +301,7 @@ export function About() {
                   </div>
                   <div className="rounded-xl overflow-hidden mb-6">
                     <ImageWithFallback 
-                      src="https://images.unsplash.com/photo-1758599668547-2b1192c10abb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjB2b2x1bnRlZXJpbmclMjBjaGFyaXR5JTIwd29yayUyMGdyb3VwfGVufDF8fHx8MTc3MDE4Njc5M3ww&ixlib=rb-4.1.0&q=80&w=800" 
+                      src="https://images.unsplash.com/photo-1758599668547-2b1192c10abb?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjB2b2x1bnRlZXJpbmclMjBjaGFyaXR5JTIwd29yayUyMGdyb3VwfGVufDF8fHx8MTc3MDE4Njc5M3ww&ixlib=rb-4.1.0&q=75&w=800" 
                       alt="Charity Event"
                       className="w-full h-64 object-cover"
                     />
@@ -403,29 +386,7 @@ export function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-background text-center">
-        <div className="container mx-auto px-4">
-           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Experience the Difference</h2>
-           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-             Ready to work with an electrical team that puts you first? Contact us today.
-           </p>
-           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Link
-               to="/contact"
-               className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground font-bold h-12 px-8 shadow-lg hover:bg-primary/90 transition-all"
-             >
-               Get in Touch
-             </Link>
-             <Link
-               to="/services"
-               className="inline-flex items-center justify-center rounded-md bg-background border border-border text-foreground font-bold h-12 px-8 hover:bg-muted transition-all"
-             >
-               View Services
-             </Link>
-           </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

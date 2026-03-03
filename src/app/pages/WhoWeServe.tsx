@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
-import { Home, Building2, HardHat, Briefcase } from 'lucide-react';
-import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import { Home, Building2, HardHat, Briefcase, Users } from 'lucide-react';
+import { PageHero } from '@/app/components/layout/PageHero';
+import { CTASection } from '@/app/components/layout/CTASection';
 
 export function WhoWeServe() {
   const audiences = [
@@ -36,14 +37,12 @@ export function WhoWeServe() {
 
   return (
     <div className="w-full">
-      <section className="bg-muted/30 py-20 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Who We Serve</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Tailored electrical solutions for every client type. From single-family homes to large commercial complexes.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Who We Serve"
+        subtitle="Tailored electrical solutions for every client type. From single-family homes to large commercial complexes."
+        badge={{ icon: Users, text: 'Our Clients' }}
+        variant="dark"
+      />
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,6 +79,8 @@ export function WhoWeServe() {
           </div>
         </div>
       </section>
+
+      <CTASection />
     </div>
   );
 }

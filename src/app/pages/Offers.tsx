@@ -4,6 +4,7 @@ import {
   TicketPercent, ArrowRight, CheckCircle2, Clock, Copy,
   Layers, ShieldCheck, Star, Phone, Percent, ChevronDown
 } from 'lucide-react';
+import { PageHero } from '@/app/components/layout/PageHero';
 import { Link } from 'react-router';
 import { cn } from '@/app/components/ui/utils';
 import { 
@@ -40,55 +41,12 @@ export function Offers() {
 
   return (
     <div className="w-full">
-      {/* Hero */}
-      <section className="relative bg-[var(--sidebar)] py-16 md:py-24 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--primary)]/20 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--secondary)]/15 blur-[80px] rounded-full -translate-x-1/2 translate-y-1/2" />
-        
-        <div className="max-w-5xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-4 py-1.5 mb-6">
-              <TicketPercent className="h-4 w-4 text-[var(--primary)]" />
-              <span className="text-[var(--primary)]" style={{ fontSize: '14px', fontWeight: 'var(--font-weight-medium)', fontFamily: FONT }}>
-                Limited Time Special Offers
-              </span>
-            </div>
-
-            <h1 
-              className="text-[var(--sidebar-foreground)] mb-4"
-              style={{ fontSize: 'clamp(32px, 5vw, var(--text-h2))', fontWeight: 'var(--font-weight-medium)', fontFamily: FONT, lineHeight: '1.15' }}
-            >
-              Save Up to {getMaxStackSavings()} <br className="hidden md:block" />
-              When You Stack Offers
-            </h1>
-            <p 
-              className="text-[var(--sidebar-foreground)]/70 max-w-2xl mx-auto mb-8"
-              style={{ fontSize: '18px', fontFamily: FONT, lineHeight: '1.6' }}
-            >
-              Quality electrical work at a price that makes sense. Many of our offers are <strong className="text-[var(--secondary)]">stackable</strong> — combine multiple codes for maximum savings.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[var(--radius)] bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5"
-                style={{ fontSize: 'var(--text-base)', fontWeight: 'var(--font-weight-medium)', fontFamily: FONT }}
-              >
-                Get a Quote & Redeem
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href="tel:+19413209868"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius)] border border-[var(--sidebar-foreground)]/20 text-[var(--sidebar-foreground)] hover:bg-[var(--sidebar-foreground)]/5 transition-colors"
-                style={{ fontSize: '14px', fontWeight: 'var(--font-weight-medium)', fontFamily: FONT }}
-              >
-                <Phone className="h-4 w-4" />
-                Call 941-320-9868
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Special Offers & Savings"
+        subtitle="Take advantage of our current promotions. Offers can be stacked for maximum savings."
+        badge={{ icon: TicketPercent, text: 'Limited Time' }}
+        variant="gradient"
+      />
 
       {/* Stacking Explainer Bar */}
       <section className="bg-emerald-500/5 border-b border-emerald-500/15 py-4">

@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/app/components/ui/utils';
-import logo from 'asset/91feb0d897fe4eff5945be1f445e0abfe2d2e4ca.png';
+import logo from 'asset/91feb0d897fe4eff5945be1f445e0abfe2d2e4ca.png?w=400&format=webp';
 import { 
   NavigationMenu, 
   NavigationMenuContent, 
@@ -234,7 +234,7 @@ export function Navbar() {
                           {/* Guarantee Badges */}
                           <div className="flex items-center gap-4">
                             <div className="flex items-center gap-1.5 text-[var(--muted-foreground)]">
-                              <Star className="h-3.5 w-3.5 text-amber-500" />
+                              <Star className="h-3.5 w-3.5 text-[var(--primary)]" />
                               <span style={{ fontSize: '11px', fontFamily: FONT }}>100% Satisfaction</span>
                             </div>
                             <div className="flex items-center gap-1.5 text-[var(--muted-foreground)]">
@@ -485,10 +485,15 @@ export function Navbar() {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
 
-                  {/* Thin Divider */}
-                  <div className="h-7 w-px bg-[var(--border)]/12 mx-1" aria-hidden="true" />
+                </NavigationMenuList>
+              </NavigationMenu>
 
-                  {/* ━━━ ABOUT DROPDOWN (with icon) ━━━ */}
+              {/* Thin Divider */}
+              <div className="h-7 w-px bg-[var(--border)]/12 mx-1" aria-hidden="true" />
+
+              {/* ━━━ ABOUT DROPDOWN — own NavigationMenu for proper right-alignment ━━━ */}
+              <NavigationMenu className="relative" viewportAlign="right">
+                <NavigationMenuList>
                   <NavigationMenuItem className="group">
                     <NavigationMenuTrigger 
                       className="bg-transparent hover:bg-transparent data-[state=open]:bg-transparent px-3 h-auto py-2"
@@ -544,8 +549,8 @@ export function Navbar() {
                             to="/about#certifications"
                             className="flex items-center gap-3 p-3 rounded-[var(--radius)] hover:bg-[var(--muted)] transition-colors no-underline"
                           >
-                            <div className="flex items-center justify-center w-9 h-9 rounded-[var(--radius)] bg-amber-500/10">
-                              <Award className="h-4 w-4 text-amber-500" />
+                            <div className="flex items-center justify-center w-9 h-9 rounded-[var(--radius)] bg-[var(--primary)]/10">
+                              <Award className="h-4 w-4 text-[var(--primary)]" />
                             </div>
                             <div>
                               <div className="text-[var(--foreground)]" style={{ fontSize: '14px', fontWeight: 'var(--font-weight-medium)', fontFamily: FONT }}>
@@ -561,7 +566,7 @@ export function Navbar() {
                         {/* Guarantee Callout */}
                         <div className="mt-2 pt-3 border-t border-[var(--border)]/10">
                           <div className="flex items-center gap-3 px-3 py-2">
-                            <Star className="h-4 w-4 text-amber-500 shrink-0" />
+                            <Star className="h-4 w-4 text-[var(--primary)] shrink-0" />
                             <span 
                               className="text-[var(--muted-foreground)]"
                               style={{ fontSize: '12px', fontFamily: FONT }}
@@ -573,7 +578,6 @@ export function Navbar() {
                       </div>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
-
                 </NavigationMenuList>
               </NavigationMenu>
             </div>

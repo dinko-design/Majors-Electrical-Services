@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
+import { MapPin } from 'lucide-react';
 import { services } from '@/app/data/services';
 import { locations } from '@/app/data/locations';
+import { PageHero } from '@/app/components/layout/PageHero';
 
 export function Sitemap() {
   const mainPages = [
@@ -41,12 +43,13 @@ export function Sitemap() {
 
   return (
     <div className="w-full bg-background min-h-screen">
-      <div className="bg-muted/30 py-12 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground">Sitemap</h1>
-          <p className="text-muted-foreground mt-2">Overview of all pages on our website.</p>
-        </div>
-      </div>
+      <PageHero
+        title="Sitemap"
+        subtitle="Overview of all pages on our website."
+        badge={{ icon: MapPin, text: 'Navigate' }}
+        variant="dark"
+        compact
+      />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

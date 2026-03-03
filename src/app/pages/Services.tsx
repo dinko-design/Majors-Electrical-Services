@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import { PageHero } from '@/app/components/layout/PageHero';
+import { CTASection } from '@/app/components/layout/CTASection';
 import { services } from '@/app/data/services';
 
 export function Services() {
@@ -40,15 +42,13 @@ export function Services() {
 
   return (
     <div className="w-full">
-      {/* Hero */}
-      <section className="bg-muted/30 py-20 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Electrical Services</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive electrical solutions for homes and businesses across the Gulf Coast. Safe, reliable, and always up to code.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Our Services"
+        subtitle="Professional electrical solutions for residential, commercial, and new construction. Every project gets inspection-ready work."
+        badge={{ icon: Zap, text: 'Complete Solutions' }}
+        variant="dark"
+        compact
+      />
 
       {/* Main Categories */}
       <section className="py-20">
@@ -127,21 +127,7 @@ export function Services() {
         ))}
       </div>
 
-      {/* CTA */}
-      <section className="py-20 bg-card border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground mb-6">Need a service not listed here?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            We handle custom electrical projects of all types. Contact us to discuss your specific needs.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
-          >
-            Contact Our Team
-          </Link>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

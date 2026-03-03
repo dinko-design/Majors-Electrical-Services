@@ -79,9 +79,9 @@ export const offers: Offer[] = [
     featured: true,
     monthlyRotation: '2026-02',
     icon: Zap,
-    color: 'text-amber-500',
-    bgColor: 'bg-amber-500/10',
-    borderColor: 'border-amber-500/20',
+    color: 'text-[var(--primary)]',
+    bgColor: 'bg-[var(--primary)]/10',
+    borderColor: 'border-[var(--primary)]/20',
     relatedServices: ['panel-upgrades', 'surge-protection', 'whole-home-rewire']
   },
   {
@@ -188,9 +188,9 @@ export const offers: Offer[] = [
     featured: false,
     monthlyRotation: '2026-02',
     icon: Lightbulb,
-    color: 'text-yellow-500',
-    bgColor: 'bg-yellow-500/10',
-    borderColor: 'border-yellow-500/20',
+    color: 'text-[var(--secondary)]',
+    bgColor: 'bg-[var(--secondary)]/10',
+    borderColor: 'border-[var(--secondary)]/20',
     relatedServices: ['recessed-lighting', 'under-cabinet', 'chandelier-install', 'interior-lighting']
   },
   {

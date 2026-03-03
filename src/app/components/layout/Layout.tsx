@@ -27,8 +27,6 @@ export function Layout() {
       <main className="flex-1 w-full">
         <Outlet />
       </main>
-      {/* Extra padding on mobile so footer content isn't hidden behind bottom nav */}
-      <div className="lg:hidden h-20" aria-hidden="true" />
       <Footer />
       <MobileBottomNav />
     </div>

@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
 import { Briefcase, Users, GraduationCap, Heart, DollarSign } from 'lucide-react';
 import { Link } from 'react-router';
-import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
-import careersHeroImage from 'asset/2a31a77a7d8f0440e8c0d2632beb026bc5977045.png';
+import { PageHero } from '@/app/components/layout/PageHero';
+import { CTASection } from '@/app/components/layout/CTASection';
 
 export function Careers() {
   const benefits = [
@@ -54,43 +54,12 @@ export function Careers() {
 
   return (
     <div className="w-full">
-      {/* Hero */}
-      <section className="relative py-24 bg-zinc-950 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-40">
-           <ImageWithFallback
-             src={careersHeroImage}
-             alt="Majors Electrical Team with Truck"
-             className="w-full h-full object-cover"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent"></div>
-        </div>
-
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-           <motion.div 
-             initial={{ opacity: 0, y: 30 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8 }}
-             className="max-w-2xl"
-           >
-             <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary mb-6">
-               <Briefcase className="h-4 w-4 mr-2" />
-               We're Hiring
-             </div>
-             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-               Build a Career You Can Be Proud Of.
-             </h1>
-             <p className="text-xl text-neutral-300 mb-8 leading-relaxed">
-               Join the Suncoast's most trusted electrical team. We value craftsmanship, safety, and people who care about their work.
-             </p>
-             <a 
-               href="#openings" 
-               className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground font-bold h-14 px-8 text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
-             >
-               View Open Positions
-             </a>
-           </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Join Our Team"
+        subtitle="Build a career, not just a job. Majors Electrical is growing and we need skilled, dedicated professionals."
+        badge={{ icon: Briefcase, text: 'Now Hiring' }}
+        variant="gradient"
+      />
 
       {/* Why Join Us */}
       <section className="py-24 bg-background">
@@ -162,6 +131,11 @@ export function Careers() {
             </div>
          </div>
       </section>
+
+      <CTASection
+        title="Ready to Join Us?"
+        subtitle="We're always looking for talented electricians who share our commitment to quality and customer service."
+      />
     </div>
   );
 }

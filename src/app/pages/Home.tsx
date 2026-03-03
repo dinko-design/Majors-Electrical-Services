@@ -41,21 +41,24 @@ import {
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'motion/react';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { OfferCallout } from '@/app/components/OfferCallout';
-import majorsFireLogo from 'asset/149aa2ea7c5e0ef47fbd0d34aa8b1031df980b36.png';
-import heroImage from 'asset/24aa3548a5c2e32e0211db0e2b82c11ea67462b6.png';
-import residentialServiceImage from 'asset/39117b4a0ee024f3f2917d6f1da2a484045a3880.png';
-import commercialServiceImage from 'asset/8f86d79c84ed378c935f4997798a28af21e33447.png';
-import careersImage from 'asset/e0d30f32cd7dc3920f11289a6cc003395c2642b3.png';
-import founderImage from 'asset/f45c62813a9a5d7b086aebd23e7f247db10a3921.png';
-import mikeImage from 'asset/72ba1c2260228eba1852b49cff83f5b869d6a035.png';
-import customerInteractionImage from 'asset/dc09f862e9fb2c9320b863e2a257807480d402e8.png';
-import panelTechImage from 'asset/6db98eed149d3991fa29d8cd2a1cb28648559a31.png';
-import teamBackImage from 'asset/fa192ccea6990bf21a815f365a6a71e2fe041d4a.png';
-import projectKitchen from 'asset/68d7140666521ac46ae1d65e1d45910472dbc85a.png';
-import projectOffice from 'asset/f42ed4e746c4c65ff1fb2011fbbe25c16fdc4e7e.png';
-import projectTech from 'asset/720377ac9610b8bd67f65e8a33a3361b5a8b55d9.png';
-import maintenanceImage from 'asset/859060effc5b00def49f2dda83f739383b7ba848.png';
-import projectSmartHome from 'asset/635d6e983d41d6188362ccf44610c1102fea01d1.png';
+import majorsFireLogo from 'asset/149aa2ea7c5e0ef47fbd0d34aa8b1031df980b36.png?w=300&format=webp';
+import heroImage from 'asset/24aa3548a5c2e32e0211db0e2b82c11ea67462b6.png?w=1200&format=webp';
+import heroSrcSet from 'asset/24aa3548a5c2e32e0211db0e2b82c11ea67462b6.png?w=640;1024;1920&format=webp&as=srcset';
+import residentialServiceImage from 'asset/39117b4a0ee024f3f2917d6f1da2a484045a3880.png?w=800&format=webp';
+import residentialSrcSet from 'asset/39117b4a0ee024f3f2917d6f1da2a484045a3880.png?w=400;800;1200&format=webp&as=srcset';
+import commercialServiceImage from 'asset/8f86d79c84ed378c935f4997798a28af21e33447.png?w=800&format=webp';
+import commercialSrcSet from 'asset/8f86d79c84ed378c935f4997798a28af21e33447.png?w=400;800;1200&format=webp&as=srcset';
+import careersImage from 'asset/e0d30f32cd7dc3920f11289a6cc003395c2642b3.png?w=800&format=webp';
+import founderImage from 'asset/f45c62813a9a5d7b086aebd23e7f247db10a3921.png?w=800&format=webp';
+import mikeImage from 'asset/72ba1c2260228eba1852b49cff83f5b869d6a035.png?w=600&format=webp';
+import customerInteractionImage from 'asset/dc09f862e9fb2c9320b863e2a257807480d402e8.png?w=600&format=webp';
+import panelTechImage from 'asset/6db98eed149d3991fa29d8cd2a1cb28648559a31.png?w=600&format=webp';
+import teamBackImage from 'asset/fa192ccea6990bf21a815f365a6a71e2fe041d4a.png?w=600&format=webp';
+import projectKitchen from 'asset/68d7140666521ac46ae1d65e1d45910472dbc85a.png?w=800&format=webp';
+import projectOffice from 'asset/f42ed4e746c4c65ff1fb2011fbbe25c16fdc4e7e.png?w=800&format=webp';
+import projectTech from 'asset/720377ac9610b8bd67f65e8a33a3361b5a8b55d9.png?w=800&format=webp';
+import maintenanceImage from 'asset/859060effc5b00def49f2dda83f739383b7ba848.png?w=800&format=webp';
+import projectSmartHome from 'asset/635d6e983d41d6188362ccf44610c1102fea01d1.png?w=800&format=webp';
 
 export function Home() {
   const [activeTab, setActiveTab] = useState('essential');
@@ -127,7 +130,7 @@ export function Home() {
       label: 'Home Essentials',
       icon: HomeIcon,
       image: residentialServiceImage,
-      color: 'from-amber-500 to-orange-600'
+      color: 'from-sky-500 to-blue-600'
     },
     {
       id: 'safety',
@@ -141,7 +144,7 @@ export function Home() {
       label: 'Lighting & Decor',
       icon: Lightbulb,
       image: projectKitchen,
-      color: 'from-yellow-400 to-amber-500'
+      color: 'from-cyan-400 to-sky-500'
     },
     {
       id: 'tech',
@@ -299,6 +302,9 @@ export function Home() {
         >
           <ImageWithFallback
             src={heroImage}
+            srcSet={heroSrcSet}
+            sizes="100vw"
+            priority
             alt="Majors Electrical Vans"
             className="w-full h-full object-cover"
           />
@@ -324,7 +330,7 @@ export function Home() {
               className="space-y-8"
             >
               <motion.div variants={itemFadeInUp}>
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#FBBC05]/30 bg-[#FBBC05]/15 px-5 py-2 text-sm font-bold text-[#FBBC05] backdrop-blur-md shadow-lg shadow-[#FBBC05]/10 mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/15 px-5 py-2 text-sm font-bold text-[var(--primary-light)] backdrop-blur-md shadow-lg shadow-[var(--primary)]/10 mb-6">
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -340,7 +346,7 @@ export function Home() {
                 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.05] drop-shadow-2xl"
               >
                 Professional Electrical<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FBBC05] via-[#FFD93D] to-[#FBBC05]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary-light)] via-[var(--primary-lighter)] to-[var(--primary-light)]">
                   You Can Trust
                 </span>
               </motion.h1>
@@ -358,7 +364,7 @@ export function Home() {
               >
                 <Link
                   to="/contact"
-                  className="group relative inline-flex items-center justify-center rounded-xl text-lg font-black ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-gradient-to-r from-[#FBBC05] to-[#FFD93D] text-black hover:shadow-2xl hover:shadow-[#FBBC05]/50 h-14 px-10 overflow-hidden"
+                  className="group relative inline-flex items-center justify-center rounded-xl text-lg font-black ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] text-white hover:shadow-2xl hover:shadow-[var(--primary)]/50 h-14 px-10 overflow-hidden"
                 >
                   <motion.div
                     className="absolute inset-0 bg-white"
@@ -388,7 +394,7 @@ export function Home() {
                 {[
                   { icon: ShieldCheck, text: 'Licensed & Insured #EC 13007355', color: 'text-emerald-400' },
                   { icon: MapPin, text: 'Locally Owned & Operated', color: 'text-blue-400' },
-                  { icon: Star, text: 'Top-Rated in Sarasota', color: 'text-[#FBBC05]' }
+                  { icon: Star, text: 'Top-Rated in Sarasota', color: 'text-[var(--primary-light)]' }
                 ].map((badge, i) => (
                   <motion.div
                     key={i}
@@ -412,7 +418,7 @@ export function Home() {
         >
           <div className="w-8 h-12 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
             <motion.div
-              className="w-2 h-2 bg-[#FBBC05] rounded-full"
+              className="w-2 h-2 bg-[var(--primary-light)] rounded-full"
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
@@ -500,22 +506,24 @@ export function Home() {
                 <div className="aspect-[4/3] w-full overflow-hidden relative">
                   <ImageWithFallback
                     src={residentialServiceImage}
+                    srcSet={residentialSrcSet}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     alt="Residential Home Service"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute top-4 right-4">
-                    <div className="h-14 w-14 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center text-[#FBBC05] shadow-xl">
+                    <div className="h-14 w-14 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center text-[var(--primary)] shadow-xl">
                       <HomeIcon className="h-7 w-7" />
                     </div>
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-[#FBBC05] transition-colors">Residential Electrical</h3>
+                  <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-[var(--primary)] transition-colors">Residential Electrical</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     Whole-home rewiring, panel upgrades, lighting design, and safety inspections for homeowners who value quality.
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[#FBBC05] font-bold">
+                  <span className="inline-flex items-center gap-2 text-[var(--primary)] font-bold">
                     Explore Services
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
                   </span>
@@ -529,6 +537,8 @@ export function Home() {
                 <div className="aspect-[4/3] w-full overflow-hidden relative">
                   <ImageWithFallback
                     src={commercialServiceImage}
+                    srcSet={commercialSrcSet}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     alt="Commercial Construction"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -816,7 +826,7 @@ export function Home() {
 
       {/* Founder Callout Section - Enhanced */}
       <section className="py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#FBBC05]/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--primary)]/5 rounded-full blur-3xl" />
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -828,7 +838,7 @@ export function Home() {
               className="lg:w-1/2 relative"
             >
               {/* Decorative background shapes */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#FBBC05]/20 to-blue-500/20 rounded-[3rem] transform -rotate-3 blur-sm"></div>
+              <div className="absolute -inset-8 bg-gradient-to-br from-[var(--primary)]/20 to-blue-500/20 rounded-[3rem] transform -rotate-3 blur-sm"></div>
               <div className="absolute -inset-4 bg-white rounded-[2.5rem] transform rotate-2 shadow-xl"></div>
 
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto border-4 border-white">
@@ -856,26 +866,26 @@ export function Home() {
 
               <motion.h2 variants={itemFadeInUp} className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-tight">
                 Meet the Founder:<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FBBC05] to-amber-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)]">
                   Justin Majors
                 </span>
               </motion.h2>
 
               <motion.div variants={containerStagger} className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <motion.p variants={itemFadeInUp}>
-                  Founded in <span className="font-black text-[#FBBC05]">October 2015</span>, Majors Electrical Services was built on a simple promise: to provide Sarasota families and businesses with electrical work they can trust, from a family they can know.
+                  Founded in <span className="font-black text-[var(--primary)]">October 2015</span>, Majors Electrical Services was built on a simple promise: to provide Sarasota families and businesses with electrical work they can trust, from a family they can know.
                 </motion.p>
                 <motion.p variants={itemFadeInUp}>
                   As a native Sarasota family, we are deeply rooted in this community. We aren't just contractors; we are your neighbors. We understand the specific needs of Florida homes—from hurricane preparedness to salt air corrosion—and we build our systems to last.
                 </motion.p>
                 <motion.div
                   variants={itemFadeInUp}
-                  className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 border-l-4 border-[#FBBC05] italic"
+                  className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 border-l-4 border-[var(--primary)] italic"
                 >
                   <p className="text-xl text-gray-900 font-medium">
                     "We treat every home we enter as if it were our own. No shortcuts, no compromises, just honest work done right."
                   </p>
-                  <p className="font-black text-2xl text-[#FBBC05] mt-4">
+                  <p className="font-black text-2xl text-[var(--primary)] mt-4">
                     — Justin Majors, Founder
                   </p>
                 </motion.div>
@@ -934,7 +944,7 @@ export function Home() {
 
                   {/* Content overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="bg-[#FBBC05] text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-2">
+                    <div className="bg-[var(--primary)] text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-2">
                       {member.specialty}
                     </div>
                     <h3 className="font-black text-xl mb-1">{member.name}</h3>
@@ -952,7 +962,7 @@ export function Home() {
             className="text-center bg-gray-50 rounded-2xl p-8"
           >
             <p className="text-lg text-gray-700 font-medium">
-              Plus <span className="font-black text-[#FBBC05]">11 more</span> dedicated technicians, apprentices, and support staff working hard for you every day.
+              Plus <span className="font-black text-[var(--primary)]">11 more</span> dedicated technicians, apprentices, and support staff working hard for you every day.
             </p>
           </motion.div>
         </div>
@@ -960,7 +970,7 @@ export function Home() {
 
       {/* Recent Projects Gallery - Enhanced */}
       <section className="py-24 bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #FBBC05 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, var(--primary) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -970,7 +980,7 @@ export function Home() {
             className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
           >
             <div>
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FBBC05]/20 text-[#FBBC05] rounded-full text-sm font-bold uppercase tracking-wider mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--primary)]/20 text-[var(--primary-light)] rounded-full text-sm font-bold uppercase tracking-wider mb-4">
                 <TrendingUp className="h-4 w-4" />
                 Portfolio
               </span>
@@ -981,7 +991,7 @@ export function Home() {
             </div>
             <Link
               to="/services"
-              className="group inline-flex items-center gap-3 text-[#FBBC05] font-bold text-lg hover:gap-4 transition-all"
+              className="group inline-flex items-center gap-3 text-[var(--primary-light)] font-bold text-lg hover:gap-4 transition-all"
             >
               View All Services
               <ArrowRight className="h-5 w-5" />
@@ -1015,10 +1025,10 @@ export function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <span className="inline-block bg-[#FBBC05] text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                    <span className="inline-block bg-[var(--primary)] text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-3">
                       {project.category}
                     </span>
-                    <h3 className="text-white font-black text-3xl mb-2 group-hover:text-[#FBBC05] transition-colors">
+                    <h3 className="text-white font-black text-3xl mb-2 group-hover:text-[var(--primary-light)] transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 font-medium">{project.specs}</p>
@@ -1086,13 +1096,13 @@ export function Home() {
                     <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-xl">
                       <client.icon className="h-7 w-7 text-gray-900" />
                     </div>
-                    <h3 className="text-2xl font-black text-white mb-2 group-hover:text-[#FBBC05] transition-colors">
+                    <h3 className="text-2xl font-black text-white mb-2 group-hover:text-[var(--primary-light)] transition-colors">
                       {client.title}
                     </h3>
                     <p className="text-white/90 text-sm leading-relaxed mb-4">
                       {client.description}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-[#FBBC05] font-bold opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                    <span className="inline-flex items-center gap-2 text-[var(--primary-light)] font-bold opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
                       Learn More <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
@@ -1197,7 +1207,7 @@ export function Home() {
               className="lg:w-1/2 space-y-8"
             >
               <motion.div variants={itemFadeInUp}>
-                <span className="inline-flex items-center gap-2 rounded-full border-2 border-[#FBBC05] bg-[#FBBC05]/10 px-5 py-2 text-sm font-black text-[#FBBC05] uppercase tracking-wide">
+                <span className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--primary)] bg-[var(--primary)]/10 px-5 py-2 text-sm font-black text-[var(--primary-light)] uppercase tracking-wide">
                   <Users className="h-5 w-5" />
                   Join Our Family
                 </span>
@@ -1205,7 +1215,7 @@ export function Home() {
 
               <motion.h2 variants={itemFadeInUp} className="text-5xl md:text-6xl font-black leading-tight">
                 More Than Just a Job.<br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FBBC05] to-amber-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)]">
                   It's a Career.
                 </span>
               </motion.h2>
@@ -1231,7 +1241,7 @@ export function Home() {
                     variants={itemFadeInUp}
                     className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10"
                   >
-                    <CheckCircle2 className="h-6 w-6 text-[#FBBC05] flex-shrink-0" />
+                    <CheckCircle2 className="h-6 w-6 text-[var(--primary-light)] flex-shrink-0" />
                     <span className="font-bold text-white">{perk}</span>
                   </motion.div>
                 ))}
@@ -1240,7 +1250,7 @@ export function Home() {
               <motion.div variants={itemFadeInUp} className="pt-6">
                 <Link
                   to="/careers"
-                  className="group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#FBBC05] to-amber-500 text-black hover:shadow-2xl hover:shadow-[#FBBC05]/50 h-16 px-10 text-lg font-black transition-all hover:scale-105"
+                  className="group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] text-white hover:shadow-2xl hover:shadow-[var(--primary)]/50 h-16 px-10 text-lg font-black transition-all hover:scale-105"
                 >
                   View Open Positions
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
@@ -1285,7 +1295,7 @@ export function Home() {
       <section className="relative w-full min-h-[600px] flex items-center py-24 overflow-hidden bg-gray-100">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1622386608025-19923caa77b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+            src="https://images.unsplash.com/photo-1622386608025-19923caa77b1?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=75&w=1200"
             alt="Sarasota and Tampa Bay Area"
             className="w-full h-full object-cover opacity-30"
           />
@@ -1303,7 +1313,7 @@ export function Home() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-[#FBBC05] to-amber-600 text-white mb-6 shadow-xl"
+                className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] text-white mb-6 shadow-xl"
               >
                 <MapPin className="h-8 w-8" />
               </motion.div>
@@ -1322,8 +1332,8 @@ export function Home() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
-                  whileHover={{ scale: 1.05, backgroundColor: "#FEF3C7" }}
-                  className="flex items-center justify-center gap-3 p-4 rounded-xl bg-gray-50 hover:bg-yellow-50 border-2 border-gray-200 hover:border-[#FBBC05] transition-all cursor-default group"
+                  whileHover={{ scale: 1.05, backgroundColor: "#E0F2FE" }}
+                  className="flex items-center justify-center gap-3 p-4 rounded-xl bg-gray-50 hover:bg-sky-50 border-2 border-gray-200 hover:border-[var(--primary)] transition-all cursor-default group"
                 >
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 group-hover:text-emerald-700" />
                   <span className="font-bold text-gray-900">{city}</span>
@@ -1332,7 +1342,7 @@ export function Home() {
             </div>
 
             <div className="mt-12 text-center">
-              <Link to="/locations" className="inline-flex items-center gap-2 text-[#FBBC05] font-bold text-lg hover:gap-3 transition-all">
+              <Link to="/locations" className="inline-flex items-center gap-2 text-[var(--primary)] font-bold text-lg hover:gap-3 transition-all">
                 View Detailed Service Map
                 <ArrowRight className="h-5 w-5" />
               </Link>
@@ -1345,7 +1355,7 @@ export function Home() {
       <OfferCallout />
 
       {/* CTA Section - Enhanced */}
-      <section className="py-32 bg-gradient-to-br from-[#FBBC05] via-amber-400 to-yellow-500 relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-[var(--primary)] via-sky-500 to-cyan-400 relative overflow-hidden">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -1371,23 +1381,23 @@ export function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 mb-8 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tight text-white mb-8 leading-tight">
               Ready to Upgrade<br />Your Electrical System?
             </h2>
-            <p className="text-2xl text-gray-800 font-medium max-w-2xl mx-auto mb-12">
+            <p className="text-2xl text-white/85 font-medium max-w-2xl mx-auto mb-12">
               Don't settle for "good enough" when it comes to your power. Contact Majors Electrical today for a consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-black text-white hover:bg-gray-900 hover:shadow-2xl h-16 px-12"
+                className="group inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-white text-[var(--primary)] hover:bg-gray-100 hover:shadow-2xl h-16 px-12"
               >
                 Get a Free Quote
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="tel:+19413209868"
-                className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all border-4 border-black bg-white text-black hover:bg-black hover:text-white h-16 px-12"
+                className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all border-4 border-white bg-white/10 text-white hover:bg-white hover:text-[var(--primary)] h-16 px-12"
               >
                 <Phone className="mr-3 h-6 w-6" />
                 (941) 320-9868
